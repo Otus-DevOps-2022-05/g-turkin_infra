@@ -3,3 +3,39 @@ g-turkin Infra repository
 
 bastion_IP = 51.250.78.141
 someinternalhost_IP = 10.128.0.3
+
+##Самостоятельное задание:
+
+###Исследовать способ подключения к someinternalhost в одну команду из вашего рабочего устройства
+
+ssh -i ~/.ssh/appuser -J appuser@51.250.78.141 appuser@10.128.0.3
+
+##Дополнительное задание:
+
+###Предложить вариант решения для подключения из консоли при помощи команды вида ssh someinternalhost
+###из локальной консоли рабочего устройства, чтобы подключение выполнялось по алиасу someinternalhost
+
+touch  ~/.ssh/config
+nano ~/.ssh/config
+Host bastion
+  HostName 51.250.78.141
+  User appuser
+  Port 22
+  ForwardAgent yes
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/appuser
+
+Host someinternalhost
+  User appuser
+  Hostname 10.128.0.3
+  Port 22
+  ProxyJump bastion
+  ForwardAgent Yes
+
+###С помощью сервисов sslip.io/xip.io и Let’s Encrypt реализуйте
+###использование валидного сертификата для панели управления VPN-сервера
+
+Заходим по адресу: https://51.250.78.141.sslip.io
+В настройках вводим имя хоста: 51.250.78.141.sslip.io
+Заходим на червер по ssh и перезапускаем серыис pritunl
+sudo service pritunl restart
