@@ -23,7 +23,7 @@ someinternalhost_IP = 10.128.0.27
  - Проект временный )))
 
 ## Как проверить работоспособность:
- - sh -i ~/.ssh/appuser -J appuser@51.250.70.124 appuser@10.128.0.27
+ - ssh -i ~/.ssh/appuser -J appuser@51.250.70.124 appuser@10.128.0.27
  - nano ~/.ssh/config
     Host bastion
       HostName 51.250.70.124
