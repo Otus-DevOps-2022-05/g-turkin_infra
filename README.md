@@ -1,7 +1,7 @@
 # g-turkin_infra
 g-turkin Infra repository
 
-bastion_IP = 51.250.68.182
+bastion_IP = 51.250.70.124
 someinternalhost_IP = 10.128.0.27
 
 # Выполнено ДЗ № 2
@@ -23,10 +23,10 @@ someinternalhost_IP = 10.128.0.27
  - Проект временный )))
 
 ## Как проверить работоспособность:
- - sh -i ~/.ssh/appuser -J appuser@51.250.68.182 appuser@10.128.0.27
+ - sh -i ~/.ssh/appuser -J appuser@51.250.70.124 appuser@10.128.0.27
  - nano ~/.ssh/config
     Host bastion
-      HostName 51.250.68.182
+      HostName 51.250.70.124
       User appuser
       Port 22
       ForwardAgent yes
@@ -39,8 +39,8 @@ someinternalhost_IP = 10.128.0.27
       ProxyJump bastion
       ForwardAgent Yes
   
-  - Заходим по адресу: https://51.250.68.182.sslip.io
-    В настройках вводим имя хоста: 51.250.68.182.sslip.io
+  - Заходим по адресу: https://51.250.70.124.sslip.io
+    В настройках вводим имя хоста: 51.250.70.124.sslip.io
     Заходим на сервер по ssh и перезапускаем сервис pritunl
     sudo service pritunl restart
 
