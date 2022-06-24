@@ -45,5 +45,5 @@ someinternalhost_IP = 10.128.0.27
     sudo service pritunl restart
 
 ## PR checklist
- - [ ] Выставил label с номером домашнего задания
- - [ ] Выставил label с темой домашнего задания
+ - [X] Выставил label с номером домашнего задания
+ - [X] Выставил label с темой домашнего задания
