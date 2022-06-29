@@ -28,7 +28,7 @@ g-turkin Infra repository
  - [X] Выставил label с темой домашнего задания
 
 
-testapp_IP = 51.250.13.103
+testapp_IP = 51.250.88.238
 testapp_port = 9292
 
 # Выполнено ДЗ № 4 "Практика управления ресурсамиyandex cloud через yc"
