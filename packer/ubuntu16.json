@@ -23,7 +23,7 @@
                     },
         {
             "type": "file",
-            "source": "./GitHub/g-turkin_infra/packer/files/puma.service",
+            "source": "files/puma.service",
             "destination": "/tmp/puma.service"
         },
         {
