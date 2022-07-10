@@ -20,23 +20,6 @@
             "type": "shell",
             "script": "scripts/install_mongodb.sh",
             "execute_command": "sudo {{.Path}}"
-                },
-                {
-            "type": "file",
-            "source": "./files/puma.service",
-            "destination": "/tmp/puma.service"
-                },
-                {
-            "type": "shell",
-            "inline": [
-                      "sudo mv /tmp/puma.service /etc/systemd/system/puma.service",
-                      "cd /home",
-                      "sudo apt-get update && sudo apt-get install -y git",
-                      "sudo chmod -R 0777 /home",
-                      "git clone -b monolith https://github.com/express42/reddit.git",
-                      "cd reddit && bundle install",
-                      "sudo systemctl daemon-reload && sudo systemctl start puma && sudo systemctl enable puma"
-                      ]
-               }
+                }
                 ]
 }
