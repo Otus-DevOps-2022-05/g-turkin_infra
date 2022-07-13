@@ -1,0 +1,20 @@
+{
+    "builders": [{
+            "type": "yandex",
+            "service_account_key_file": "/home/gt/key.json",
+            "folder_id": "b1gmp8gd4pgobdgeh20h",
+            "source_image_family": "ubuntu-1604-lts",
+            "image_name": "db-{{timestamp}}",
+            "image_family": "db",
+            "ssh_username": "ubuntu",
+            "platform_id": "standard-v1",
+            "subnet_id": "e9bfvuec130b3jad93q8",
+            "use_ipv4_nat": "true"
+                }],
+    "provisioners": [{
+            "type": "shell",
+            "script": "scripts/install_mongodb.sh",
+            "execute_command": "sudo {{.Path}}"
+                    }
+]
+}
