@@ -4,4 +4,4 @@ variables.json
 *.tfstate.backup
 *.tfvars
 .terraform/
-**/versions.tf
+terraform/**/versions.tf
