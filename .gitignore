@@ -5,3 +5,4 @@ variables.json
 *.tfvars
 .terraform/
 terraform/**/versions.tf
+terraform/modules/**/versions.tf
